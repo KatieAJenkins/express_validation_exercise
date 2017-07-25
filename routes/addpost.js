@@ -3,7 +3,6 @@
 var express = require('express');
 var router = express.Router();
 
-
 router.get('/', function(req, res){
   res.render('add_post', {
     hasError : false,
@@ -13,6 +12,7 @@ router.get('/', function(req, res){
     description: ''
   });
 });
+
 router.post('/', function(req, res){
 
   var postInfo = checkPost(req); // Run error checking.
@@ -27,12 +27,6 @@ router.post('/', function(req, res){
     res.render('add_post', postInfo);
   }
 });
-
-
-
-
-
-
 
 function checkPost(req){
   var info = {};
